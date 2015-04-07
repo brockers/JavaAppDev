@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GeoQuizLab1Solution</string>
+    <string name="question_text">The St. Louis Arch is next to the Mississippi River.</string>
+    <string name="true_button">True</string>
+    <string name="false_button">False</string>
+    <string name="next_button">Next</string>
+    <string name="previous_button">Previous</string>
+    <string name="menu_settings">Settings</string>
+    <string name="correct_toast">Correct!</string>
+    <string name="incorrect_toast">Incorrect!</string>
+    <string name="question_chatdump">The Desloge chat dump was once the largest manmade mountain.</string>
+	<string name="question_mines">Scuba diving is not allowed in the Bonne Terre mines</string>
+	<string name="question_quakes">There has never been an earthquake in Missouri</string>
+	<string name="question_wine">Ste Genevieve has a growing wine industry</string>
+	<string name="question_mtlion">There are no mountain lions in Missouri.</string>
+</resources>
