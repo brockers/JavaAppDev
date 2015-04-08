@@ -1,6 +1,7 @@
 package com.example.geoquizlab1solution;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -17,6 +18,7 @@ public class QuizActivity extends Activity {
 	private Button mFalseButton;
 	private Button mNextButton;
 	private Button mPreviousButton;
+	private Button mCheatButton;
 	private TextView mQuestionTextView;
 	private static final String TAG = "QuizActivity";
 	private static final String KEY_INDEX = "index";
@@ -131,8 +133,21 @@ public class QuizActivity extends Activity {
         		updateQuestion();
         	}
         	});
-	
-    }
+        
+    	mCheatButton = (Button)findViewById(R.id.cheat_button);
+    	mCheatButton.setOnClickListener(new View.OnClickListener() {
+
+    		@Override
+    		public void onClick(View v) {
+    			// TODO Auto-generated method stub
+    			Intent i = new Intent(QuizActivity.this, CheatActivity.class);
+    			startActivity(i);
+    			
+    		}
+    	});
+		}
+    
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
