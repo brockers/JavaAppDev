@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Intent;
 
 
 
@@ -17,6 +18,7 @@ public class QuizActivity extends Activity {
 	private Button mFalseButton;
 	private Button mNextButton;
 	private Button mPreviousButton;
+	private Button mCheatButton;
 	private TextView mQuestionTextView;
 	private static final String TAG = "QuizActivity";
 	private static final String KEY_INDEX = "index";
@@ -35,14 +37,11 @@ public class QuizActivity extends Activity {
 		super.onSaveInstanceState(savedInstanceState);
 		Log.i(TAG, "onSaveInstanceState");
 		savedInstanceState.putInt(KEY_INDEX, mCurrentIndex);
-	}
-
-	
+	}	
 	private void updateQuestion(){
 		int question = mQuestionBank[mCurrentIndex].getQuestion();
 		mQuestionTextView.setText(question);
-	}
-	
+	}	
 	private void checkAnswer(boolean userPressedTrue) {
 		boolean answerIsTrue = mQuestionBank[mCurrentIndex].isTrueQuestion();
 		int messageResId = 0;
@@ -56,7 +55,6 @@ public class QuizActivity extends Activity {
 		Toast.makeText(this, messageResId, Toast.LENGTH_SHORT).show();
 			
 	}
-
     @Override
     protected void onStart(){
     	Log.d(TAG, "onStart(Bundle called)");
@@ -77,8 +75,7 @@ public class QuizActivity extends Activity {
     protected void onDestroy(){
     	Log.d(TAG, "onDestroy(Bundle called)");
     	super.onDestroy();
-    }
-    
+    } 
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate(Bundle called)");
@@ -131,9 +128,17 @@ public class QuizActivity extends Activity {
         		updateQuestion();
         	}
         	});
-	
+        mCheatButton = (Button)findViewById(R.id.cheat_button);
+    	mCheatButton.setOnClickListener(new View.OnClickListener() {
+    		
+    		@Override
+    		public void onClick(View v) {
+    			// TODO Auto-generated method stub
+    			Intent i = new Intent(QuizActivity.this, CheatActivity.class);
+    			startActivity(i);
+    		}
+    	});
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
