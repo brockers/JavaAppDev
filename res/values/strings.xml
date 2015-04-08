@@ -15,4 +15,8 @@
 	<string name="question_quakes">There has never been an earthquake in Missouri</string>
 	<string name="question_wine">Ste Genevieve has a growing wine industry</string>
 	<string name="question_mtlion">There are no mountain lions in Missouri.</string>
+	<string name="cheat_button">Cheat!</string>
+	<string name="warning_text">Are you sure you want to do this?</string>
+	<string name="show_answer_button">Show the answer</string>
+	<string name="judgment_toast">Cheating is wrong.</string>
 </resources>
